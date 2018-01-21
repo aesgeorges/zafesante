@@ -26,7 +26,7 @@ SECRET_KEY = 'x77f_0jw$y3^8c#hqp!il#j7+#7+okw(f(!e42b4b(iz=jpbj$'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['zafe-sante.herokuapp.com']
 
 
 # Application definition
