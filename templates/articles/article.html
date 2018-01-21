@@ -1,0 +1,11 @@
+{% extends "../home/base.html" %}
+{% block body %}
+<h1> {{ title }} </h1>
+<h2> {{ article.description }} </h2>
+<h4> {{ article.author }} </h4>
+{% if article.picture %}
+<a><img src="{{ article.picture.url }}"></a>
+{% else %}
+{% endif %}
+<p> {{article.content}}... </p>
+{% endblock %}

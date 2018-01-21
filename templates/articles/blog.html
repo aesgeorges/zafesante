@@ -1,0 +1,15 @@
+{% extends "../home/base.html" %}
+{% block body %}
+<p> Articles </p>
+{% for article in articles %}
+<h1> {{ article.title }} </h1>
+<h2> {{ article.description }} </h2>
+<h4> {{ article.author }} </h4>
+{% if article.picture %}
+<a><img src="{{ article.picture.url }}"></a>
+{% else %}
+{% endif %}
+<p> {{article.content|truncatewords:50}}... </p>
+<a href="{{article.get_absolute_url}}">Read More &raquo;</a>
+{% endfor %}
+{% endblock %}
