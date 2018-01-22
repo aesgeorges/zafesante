@@ -10,7 +10,7 @@ article_blog_template = 'articles/blog.html'
 def articles_blog(request):
     articles = Articles.objects.filter(published=True).order_by('featured', 'created')
     title = 'Atik Zafè Sante'
-    year = datetime.now().year,
+    year = datetime.now().year
     context = {'articles': articles, 'title': title, 'year': year}
     return render(request, article_blog_template, context)
 

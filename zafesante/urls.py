@@ -21,5 +21,5 @@ urlpatterns = [
     path('', include('home.urls')),
     path('articles/', include('articles.urls')),
     #path('media/', include('media.urls')),
-    #path('questions/', include('questions.urls')),
+    path('questions/', include('questions.urls')),
 ]
