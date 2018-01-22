@@ -1,11 +1,38 @@
-{% extends "../home/base.html" %}
+{% extends "../base.html" %}
+{% load staticfiles %}
 {% block body %}
-<h1> {{ title }} </h1>
-<h2> {{ article.description }} </h2>
-<h4> {{ article.author }} </h4>
+<!-- Page Header -->
 {% if article.picture %}
-<a><img src="{{ article.picture.url }}"></a>
-{% else %}
-{% endif %}
-<p> {{article.content}}... </p>
+<header class="masthead" style="background-image: url('{{ article.picture.url }}')">
+  {% else %}
+  <header class="masthead" style="background-image: url('img/post-bg.jpg')">
+    {% endif %}
+  <div class="overlay"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <div class="post-heading">
+          <h1>{{ title }}</h1>
+          <h2 class="subheading">{{ article.description }}</h2>
+          <span class="meta">Posted by
+            <a href="#">{{ article.author }}</a>
+          {{article.created}}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- Post Content -->
+<article>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <p>{{article.content}}</p>
+      </div>
+    </div>
+  </div>
+</article>
+
+<hr>
 {% endblock %}
