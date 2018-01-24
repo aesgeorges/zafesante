@@ -8,7 +8,7 @@
     <div class="row">
       <div class="col-lg-8 col-md-10 mx-auto">
         <div class="site-heading">
-          <h1>Kesyon pouy Zafè Sante</h1>
+          <h1>Kesyon pou Zafè Sante</h1>
           <span class="subheading">Vote si nou renmen yon kesyon ou byen ta renmen poze menm kesyon an.</span>
         </div>
       </div>
@@ -23,6 +23,9 @@
       <div class="clearfix">
         <a class="btn btn-primary float-left" href="#"> Ajoute Kesyon &rarr;</a>
       </div>
+      {% if error %}
+      <p> {{ error }} </p>
+      {% endif %}
       {% for question in questions %}
       <div class="post-preview">
         <a href="{{question.get_absolute_url}}">
@@ -34,7 +37,7 @@
           <a href="#"> {{ question.author }} </a>
           on {{ question.created }}</p>
           <p> {{ question.votes }} votes
-          <a class="btn btn-secondary float-right" href="{% url 'vote' question.slug %}"> Mrenmen sa &rarr;</a>
+          <a class="btn btn-secondary float-right" href="{% url 'vote' slug=question.slug %}"> Mrenmen sa &rarr;</a>
           </p>
       </div>
       <hr>

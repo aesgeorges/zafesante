@@ -1,5 +1,6 @@
 from django.db import models
 from django.urls import reverse
+from django.contrib.auth.models import User
 # Create your models here.
 
 
@@ -21,3 +22,8 @@ class Questions(models.Model):
 
     def get_absolute_url(self):
             return reverse('single_question', args=[self.slug])
+
+
+class Voted(models.Model):
+    user = models.ForeignKey(User, on_delete=models.DO_NOTHING)
+    question = models.ForeignKey(Questions, on_delete=models.CASCADE)
