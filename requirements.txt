@@ -1,5 +1,6 @@
 dj-database-url==0.4.2
 Django==2.0.1
+django-autoslug-iplweb==1.9.4.dev0
 gunicorn==19.7.1
 Pillow==5.0.0
 psycopg2==2.7.3.2

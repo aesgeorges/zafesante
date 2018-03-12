@@ -6,8 +6,8 @@ from django.contrib.auth.models import User
 
 class Questions(models.Model):
     question = models.CharField(max_length=255)
-    slug = models.SlugField(unique=True)
-    author = models.CharField(max_length=50)
+    slug = models.SlugField(unique=True, max_length=255)
+    author = models.CharField(max_length=255)
     votes = models.IntegerField(default='0')
     created = models.DateField(auto_now_add=True)
 
