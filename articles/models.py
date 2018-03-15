@@ -9,7 +9,7 @@ class Articles(models.Model):
     author = models.CharField(max_length=50)
     description = models.CharField(max_length=255)
     content = models.TextField()
-    picture = models.ImageField('img', upload_to='media/', blank=True)
+    picture = models.ImageField('img', upload_to='pictures/', blank=True)
     featured = models.BooleanField(default=False)
     created = models.DateField(auto_now_add=True)
     published = models.BooleanField(default=True)
