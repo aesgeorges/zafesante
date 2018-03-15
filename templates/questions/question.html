@@ -2,7 +2,7 @@
 {% load staticfiles %}
 {% block body %}
 <!-- Page Header -->
-  <header class="masthead" style="background-image: url('img/post-bg.jpg')">
+  <header class="masthead" style="background-image: url('img/ZafeSanteBanner.png')">
   <div class="overlay"></div>
   <div class="container">
     <div class="row">
@@ -10,7 +10,7 @@
         <div class="post-heading">
           <h1>{{ question.question }}</h1>
           <span class="meta">Posted by
-            <a href="#">{{ question.author }}</a>
+            {{ question.author }}
           {{question.created}}</span>
             <p> {{ question.votes }} votes </p>
         </div>

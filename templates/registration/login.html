@@ -2,7 +2,7 @@
 {% load staticfiles %}
 {% block body %}
 <!-- Page Header -->
-  <header class="masthead" style="background-image: url('img/post-bg.jpg')">
+  <header class="masthead" style="background-image: url('img/ZafeSanteBanner.png')">
   <div class="overlay"></div>
   <div class="container">
     <div class="row">
@@ -12,8 +12,11 @@
   <form method="post">
     {% csrf_token %}
     {{ form.as_p }}
-    <button type="submit">Login</button>
+    <button type="submit" class="btn btn-primary">Login</button>
   </form>
+  <br />
+  <h4>Kreye yon nouvo kont.</h4>
+  <a class="btn btn-secondary" href="{% url 'signup' %}"> Register &rarr;</a>
 </div>
 </div>
 </div>
