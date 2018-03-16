@@ -26,7 +26,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['zafe-sante.herokuapp.com', 'www.zafesante.com']
+ALLOWED_HOSTS = ['*', 'zafe-sante.herokuapp.com', 'www.zafesante.com']
 
 
 # Application definition
@@ -80,7 +80,7 @@ WSGI_APPLICATION = 'zafesante.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
 
-DATABASES ={'default':dj_database_url.config(default='postgres://dxpicdsfqspuht:a0d288681cef9770ffe8e17786d3c77662a370aa91b0ed0433aecd972e618230@ec2-107-21-236-219.compute-1.amazonaws.com:5432/d5pj8a9f7dsnnc')}
+DATABASES ={'default':dj_database_url.config(default=os.environ.get('DATABASE'))}
 
 # Password validation
 # https://docs.djangoproject.com/en/2.0/ref/settings/#auth-password-validators
