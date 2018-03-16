@@ -21,7 +21,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'x77f_0jw$y3^8c#hqp!il#j7+#7+okw(f(!e42b4b(iz=jpbj$'
+SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
@@ -81,7 +81,7 @@ WSGI_APPLICATION = 'zafesante.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
 
-DATABASES ={'default':dj_database_url.config(default='postgres://dxpicdsfqspuht:a0d288681cef9770ffe8e17786d3c77662a370aa91b0ed0433aecd972e618230@ec2-107-21-236-219.compute-1.amazonaws.com:5432/d5pj8a9f7dsnnc')}
+DATABASES ={'default':dj_database_url.config(default=os.environ.get('DATABASE'))}
 
 # Password validation
 # https://docs.djangoproject.com/en/2.0/ref/settings/#auth-password-validators
@@ -131,8 +131,8 @@ STATICFILES_DIRS = (
 
 #STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
-AWS_ACCESS_KEY_ID = 'AKIAJX2NU6T5ZPXJNL7A'
-AWS_SECRET_ACCESS_KEY = '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'
+AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
+AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
 AWS_STORAGE_BUCKET_NAME = 'zafesante-assets'
 AWS_STATIC_BUCKET_NAME = 'zafesante-static'
 AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
