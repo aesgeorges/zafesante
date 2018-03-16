@@ -133,14 +133,16 @@ STATICFILES_DIRS = (
 AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
 AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
 AWS_STORAGE_BUCKET_NAME = 'zafesante-assets'
+AWS_STATIC_BUCKET_NAME = 'zafesante-static'
 AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
+AWS_S3_CUSTOM_DOMAIN_STATIC = '%s.s3.amazonaws.com' % AWS_STATIC_BUCKET_NAME
 
 AWS_S3_OBJECT_PARAMETERS = {
     'CacheControl': 'max-age=86400',
 }
 
 AWS_LOCATION = 'static'
-#STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-#STATIC_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, AWS_LOCATION)
+STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+STATIC_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN_STATIC, AWS_LOCATION)
 
 DEFAULT_FILE_STORAGE = 'zafesante.storage_backends.MediaStorage'
