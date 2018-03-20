@@ -1,6 +1,7 @@
 {% extends "../base.html" %}
 {% load staticfiles %}
 {% block body %}
+{% load social_share %}
 <!-- Page Header -->
 {% if article.picture %}
 <header class="masthead" style="background-image: url('{{ article.picture.url }}')">
@@ -16,7 +17,28 @@
           <h2 class="subheading">{{ article.description }}</h2>
           <span class="meta">Posted by
             <a href="#">{{ article.author }}</a>
-          {{article.created}}</span>
+          {{article.created}}
+        <br />
+        <br />
+        <ul class="list-inline text-center">
+          <p> Pataje Atik sa a sou rezo sosyo: </p>
+          <li class="list-inline-item">
+        {% post_to_facebook "" "Share on Facebook" %}
+      </li>
+      <li class="list-inline-item">
+        {% post_to_twitter "{{ title }} - {{ article.description }} - Atik Zafè Sante" "" "Tweet this!"%}
+          </li>
+        <li class="list-inline-item">
+        {% post_to_linkedin "{{ title }} - {{ article.description }} - Atik Zafè Sante http://www.zafesante.com/{{ article.get_absolute_url }}" "" "Post on LinkedIn"%}
+          </li>
+        <li class="list-inline-item">
+        {% send_email "{{ title }} - {{ article.description }} - Atik Zafè Sante" "{{ title }} - {{ article.description }} - Atik Zafè Sante" "" "Send via email"%}
+          </li>
+        <li class="list-inline-item">
+        {% post_to_reddit "{{ title }} - {{ article.description }} - Atik Zafè Sante" "" %}
+          </li>
+        </ul>
+      </span>
         </div>
       </div>
     </div>

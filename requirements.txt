@@ -3,6 +3,7 @@ botocore==1.9.9
 dj-database-url==0.4.2
 Django==2.0.1
 django-autoslug-iplweb==1.9.4.dev0
+django-social-share==1.1.2
 django-storages==1.6.5
 docutils==0.14
 gunicorn==19.7.1
