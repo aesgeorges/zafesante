@@ -1,5 +1,5 @@
 {% extends "../base.html" %}
-{% load staticfiles %}
+{% load static %}
 {% block body %}
 <!-- Page Header -->
 <header class="masthead">
@@ -10,30 +10,30 @@
       <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
       <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
       </ol>
-      <div class="carousel-inner">
+      <div class="carousel-inner" style="background-color: black;">
       <div class="carousel-item active">
-        <img class="d-block w-100" src="{% static 'img/zafesante5.jpg' %}" alt="{{ title }}">
+        <img class="d-block w-100" src="{% static 'img/covid1.png' %}" alt="{{ title }}">
         <div class="carousel-caption d-none d-md-block">
             <h1>{{ title }}</h1>
               <span class="subheading">{{ message }}</span>
               </div>
         </div>
         <div class="carousel-item">
-        <img class="d-block w-100" src="{% static 'img/zafesante12.jpg' %}">
+        <img class="d-block w-100" src="{% static 'img/covid2.png' %}">
         <div class="carousel-caption d-none d-md-block">
             <h1>{{ title }}</h1>
               <span class="subheading">{{ message }}</span>
               </div>
         </div>
         <div class="carousel-item">
-        <img class="d-block w-100" src="{% static 'img/zafesante15.jpg' %}">
+        <img class="d-block w-100" src="{% static 'img/covid3.png' %}">
         <div class="carousel-caption d-none d-md-block">
             <h1>{{ title }}</h1>
               <span class="subheading">{{ message }}</span>
               </div>
         </div>
         <div class="carousel-item">
-        <img class="d-block w-100" src="{% static 'img/zafesante4.jpg' %}">
+        <img class="d-block w-100" src="{% static 'img/zafesante5.jpg' %}">
         <div class="carousel-caption d-none d-md-block">
             <h1>{{ title }}</h1>
               <span class="subheading">{{ message }}</span>
