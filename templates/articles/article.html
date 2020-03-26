@@ -21,25 +21,22 @@
         <br />
         <br />
 
-        <!-- Add font awesome icons -->
-        <a href="#" class="fa fa-facebook"></a>
-        <a href="#" class="fa fa-twitter"></a>
-
         <ul class="list-inline text-center">
           <p> Pataje Atik sa a sou rezo sosyo: </p>
           <li class="list-inline-item">
+            <i class="fab fa-facebook"></i>
         {% post_to_facebook "" "Share on Facebook" %}
       </li>
       <li class="list-inline-item">
+        <i class="fab fa-twitter"></i>
         {% post_to_twitter "{{ title }} - {{ article.description }} - Atik Zafè Sante" "" "Tweet this!"%}
           </li>
         <li class="list-inline-item">
+          <i class="fab fa-linkedin"></i>
         {% post_to_linkedin "{{ title }} - {{ article.description }} - Atik Zafè Sante http://www.zafesante.com/{{ article.get_absolute_url }}" "" "Post on LinkedIn"%}
           </li>
         <li class="list-inline-item">
-        {% send_email "{{ title }} - {{ article.description }} - Atik Zafè Sante" "{{ title }} - {{ article.description }} - Atik Zafè Sante" "" "Send via email"%}
-          </li>
-        <li class="list-inline-item">
+          <i class="fab fa-reddit"></i>
         {% post_to_reddit "{{ title }} - {{ article.description }} - Atik Zafè Sante" "" %}
           </li>
         </ul>
