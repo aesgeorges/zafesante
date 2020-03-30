@@ -1,0 +1,147 @@
+{% extends "../base.html" %}
+{% load static %}
+{% block body %}
+<!-- Portfolio Grid -->
+    <section class="bg-light" style="margin-top:-70px;" id="portfolio">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 text-center">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4 col-sm-6 portfolio-item">
+            <a class="portfolio-link" href="{% url 'blog' %}">
+              <div class="portfolio-hover">
+                <div class="portfolio-hover-content">
+                  <i class="fas fa-newspaper fa-3x"></i>
+                </div>
+              </div>
+              <img class="img-fluid" src="{% static 'img/chris.jpeg' %}" alt="">
+            </a>
+            <div class="portfolio-caption">
+              <h4>Atik</h4>
+              <p class="text-muted">Atik Zafè Sante yo.</p>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-6 portfolio-item">
+            <a class="portfolio-link" href="{% url 'questions' %}">
+              <div class="portfolio-hover">
+                <div class="portfolio-hover-content">
+                  <i class="fa fa-question-circle fa-3x"></i>
+                </div>
+              </div>
+              <img class="img-fluid" src="{% static 'img/isa.jpeg' %}" alt="">
+            </a>
+            <div class="portfolio-caption">
+              <h4>Kesyon</h4>
+              <p class="text-muted">Poze nou Kesyon w'</p>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-6 portfolio-item">
+            <a class="portfolio-link" href="{% url 'video_list' %}">
+              <div class="portfolio-hover">
+                <div class="portfolio-hover-content">
+                  <i class="fas fa-video fa-3x"></i>
+                </div>
+              </div>
+              <img class="img-fluid" src="{% static 'img/tournage.jpeg' %}" alt="">
+            </a>
+            <div class="portfolio-caption">
+              <h4>Videos</h4>
+              <p class="text-muted">Epizod Zafè Sante</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Team -->
+    <section class="bg-light" style="margin-top:-200px;" id="team">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 text-center">
+            <h2 class="section-heading text-uppercase">Manm Ekip Lan</h2>
+            <h3 class="section-subheading text-muted"></h3>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-4">
+            <div class="team-member">
+              <img class="mx-auto rounded-circle" src="{% static 'img/isabelle.jpg' %}" alt="">
+              <h4>Anne Isabelle Mercy</h4>
+              <p class="text-muted">Présidente et Présentatrice</p>
+            </div>
+          </div>
+          <div class="col-sm-4">
+            <div class="team-member">
+              <img class="mx-auto rounded-circle" src="{% static 'img/zafesante6.jpg' %}" alt="">
+              <h4>Rhod G. Constant</h4>
+              <p class="text-muted">Vice-Président</p>
+            </div>
+          </div>
+          <div class="col-sm-4">
+            <div class="team-member">
+              <img class="mx-auto rounded-circle" src="{% static 'img/zafesante13.jpg' %}" alt="">
+              <h4>Chrismy L. P. Augustin</h4>
+              <p class="text-muted">Rédacteur en Chef</p>
+            </div>
+          </div>
+              <!-- Equipes -->
+          <section class="bg-light" style="margin-top:-100px;" id="portfolio">
+            <div class="container">
+              <div class="row">
+                <div class="col-lg-12 text-center">
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-4 col-sm-6 portfolio-item">
+                    <img class="img-fluid" src="{% static 'img/zafesante3.jpg' %}" alt="">
+                  </a>
+                  <div class="portfolio-caption">
+                    <h4>Enquetes et Recherches</h4>
+                    <p class="text-muted">Taffael Blanchard et Goldons Journal</p>
+                  </div>
+                </div>
+                <div class="col-md-4 col-sm-6 portfolio-item">
+                    <img class="img-fluid" src="{% static 'img/zafesante12.jpg' %}" alt="">
+                  </a>
+                  <div class="portfolio-caption">
+                    <h4>Rédaction</h4>
+                    <p class="text-muted">Chrismy L.P. Augustin, Mélissa Métellus, Jean S. G. Jolicoeur et Yvan Jean Verlaine Pierre</p>
+                  </div>
+                </div>
+                <div class="col-md-4 col-sm-6 portfolio-item">
+                    <img class="img-fluid" src="{% static 'img/zafesante4.jpg' %}" alt="">
+                  </a>
+                  <div class="portfolio-caption">
+                    <h4>Recherches</h4>
+                    <p class="text-muted">Olivier E. Germain, Michèle Jean Louis et Yvan Jean Verlaine Pierre. </p>
+                  </div>
+                </div>
+                <div class="col-md-4 col-sm-6 portfolio-item">
+                    <img class="img-fluid" src="{% static 'img/zafesante15.jpg' %}" alt="">
+                  </a>
+                  <div class="portfolio-caption">
+                    <h4>Logistique</h4>
+                    <p class="text-muted">Fénélus Samuel, Rhod G. Constant et Diderot Mathurin. </p>
+                  </div>
+                </div>
+                <div class="col-md-4 col-sm-6 portfolio-item">
+                    <img class="img-fluid" src="{% static 'img/alex.jpeg' %}" alt="">
+                  </a>
+                  <div class="portfolio-caption">
+                    <h4>Webmaster</h4>
+                    <p class="text-muted">Alexandre E.S. Georges</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+        <div class="row">
+          <div class="col-lg-8 mx-auto text-center">
+            <p class="large text-muted">Se mèt ko ki veye ko.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+{% endblock %}

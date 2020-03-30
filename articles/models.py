@@ -25,3 +25,16 @@ class Articles(models.Model):
 
     def get_absolute_url(self):
             return reverse('single_article', args=[self.slug])
+
+
+class Infocard(models.Model):
+    title = models.CharField(max_length=100)
+    created = models.DateField(auto_now_add=True)
+
+    class Meta:
+            ordering = ['created']
+
+
+class InfocardImage(models.Model):
+    infocard = models.ForeignKey(Infocard, related_name='images', on_delete=models.CASCADE)
+    image = models.ImageField('img', upload_to='pictures/', blank=True)

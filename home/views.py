@@ -1,6 +1,7 @@
 from django.contrib.auth import login, authenticate
 from django.contrib.auth.forms import UserCreationForm
 from django.shortcuts import render, redirect
+from articles.models import Infocard
 
 # Create your views here.
 
@@ -9,9 +10,10 @@ register_template = 'registration/register.html'
 
 
 def index(request):
+    cards = Infocard.objects.order_by('created')
     title = 'Zafè Sante'
     message = 'Se mèt ko ki veye ko.'
-    context = {'title': title, 'message': message}
+    context = {'title': title, 'message': message, 'cards': cards}
     return render(request, index_template, context)
 
 
