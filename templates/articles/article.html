@@ -4,17 +4,17 @@
 {% load social_share %}
 <!-- Page Header -->
 {% if article.picture %}
-<header class="masthead" style="background-image: url('{{ article.picture.url }}')">
+<header class="jumbotron p-3 p-md-5 text-white rounded box-main" style="background-image: url('{{ article.picture.url }}')">
   {% else %}
-  <header class="masthead" style="background-image: url('img/post-bg.jpg')">
+  <header class="jumbotron p-3 p-md-5 text-white rounded box-main" style="background-image: url('img/post-bg.jpg')">
     {% endif %}
   <div class="overlay"></div>
   <div class="container">
     <div class="row">
       <div class="col-lg-8 col-md-10 mx-auto">
         <div class="post-heading">
-          <h1>{{ title }}</h1>
-          <h2 class="subheading">{{ article.description }}</h2>
+          <h1>{{ title }}</h1><br />
+          <h4 class="subheading">{{ article.description }}</h4>
           <span class="meta">Posted by
             <a href="#">{{ article.author }}</a>
           {{article.created}}

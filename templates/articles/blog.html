@@ -2,7 +2,7 @@
 {% load static %}
 {% block body %}
 <!-- Page Header -->
-<header class="masthead" style="background-image: url({% static 'img/chris.jpeg' %})">
+<header class="jumbotron rounded text-white" style="background-image: url({% static 'img/chris.jpeg' %})">
   <div class="overlay"></div>
   <div class="container">
     <div class="row">
@@ -21,25 +21,17 @@
   <div class="row">
     <div class="col-lg-8 col-md-10 mx-auto">
       {% for article in articles %}
-      <div class="post-preview">
-        <a href="{{article.get_absolute_url}}">
-          <h2 class="post-title">
-            {{ article.title }}
-          </h2>
-          <h3 class="post-subtitle">
-            {{ article.description }}
-          </h3>
-        </a>
-        <p class="post-meta">Posted by
-          <a href="#"> {{ article.author }} </a>
-          on {{ article.created }}</p>
-      </div>
+          <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+            <div class="col p-4 d-flex flex-column position-static">
+              <strong class="d-inline-block mb-2 text-primary">{{ article.author }}</strong>
+              <h3 class="mb-0">{{ article.title }}</h3>
+              <div class="mb-1 text-muted">{{ article.created }}</div>
+              <p class="card-text mb-auto">{{ article.description }}</p>
+              <a href="{{article.get_absolute_url}}" class="stretched-link">Continue reading</a>
+            </div>
       <hr>
       {% endfor %}
       <!-- Pager -->
-      <div class="clearfix">
-        <a class="btn btn-primary float-right" href="#">Older Posts &rarr;</a>
-      </div>
     </div>
   </div>
 </div>

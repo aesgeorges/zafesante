@@ -2,13 +2,13 @@
 {% load static %}
 {% block body %}
 <!-- Page Header -->
-<header class="masthead" style="background-image: url({% static 'img/tournage.jpeg' %})">
+<header class="jumbotron rounded text-white" style="background-image: url({% static 'img/tournage.jpeg' %})">
   <div class="overlay"></div>
   <div class="container">
     <div class="row">
       <div class="col-lg-8 col-md-10 mx-auto">
         <div class="site-heading">
-          <h1>Videos</h1>
+          <h1>Epizod Zafe Sante Yo</h1>
         </div>
       </div>
     </div>
@@ -18,22 +18,21 @@
 <!-- Main Content -->
 <div class="container">
   <div class="row">
-    <div class="col-lg-8 col-md-10 mx-auto">
-      {% for video in videos %}
-      <div class="post-preview">
-        <a href="{{video.get_absolute_url}}">
-          <h2 class="post-title">
-            {{ video.name }}
-          </h2>
-        </a>
+      <div class="col-lg-8 col-md-10 mx-auto">
+        {% for video in videos %}
+        <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+          <div class="col p-4 d-flex flex-column position-static">
+            <a href="{{video.get_absolute_url}}">
+              <h3 class="mb-0">{{ video.name }}</h3>
+            </a>
+          </div>
+        <!-- Pager -->
       </div>
-      <hr>
       {% endfor %}
-      <!-- Pager -->
     </div>
   </div>
 </div>
 
-<hr>
+
 
 {% endblock %}

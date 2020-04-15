@@ -2,7 +2,7 @@
 {% load static %}
 {% block body %}
 <!-- Page Header -->
-<header class="masthead" style="background-image: url({% static 'img/isa.jpeg' %})">
+<header class="jumbotron rounded text-white" style="background-image: url({% static 'img/isa.jpeg' %})">
   <div class="overlay"></div>
   <div class="container">
     <div class="row">
@@ -16,6 +16,7 @@
   </div>
 </header>
 
+
 <!-- Main Content -->
 <div class="container">
   <div class="row">
@@ -23,33 +24,26 @@
       <div class="clearfix">
         <a class="btn btn-primary float-left" href="{% url 'add_question' %}"> Ajoute Kesyon &rarr;</a>
       </div>
+      <br />
       {% if error %}
       <p> {{ error }} </p>
       {% endif %}
       {% for question in questions %}
-      <div class="post-preview">
-        <a href="{{question.get_absolute_url}}">
-          <h2 class="post-title">
-            {{ question.question }}
-          </h2>
-        </a>
-        <p class="post-meta">Posted by
-          <a href="#"> {{ question.author }} </a>
-          on {{ question.created }}</p>
-          <p> {{ question.votes }} votes
+      <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+        <div class="col p-4 d-flex flex-column position-static">
+          <strong class="d-inline-block mb-2 text-primary"> by {{ question.author }}</strong>
+          <h3 class="mb-0">{{ question.question }}</h3>
+          <div class="mb-1 text-muted">{{ question.created }}</div>
+          <p class="card-text mb-auto">{{ question.votes }} votes</p>
           <a class="btn btn-secondary float-right" href="{% url 'vote' slug=question.slug %}"> Mrenmen sa &rarr;</a>
-          </p>
-      </div>
+        </div>
       <hr>
       {% endfor %}
       <!-- Pager -->
-      <div class="clearfix">
-        <a class="btn btn-primary float-right" href="#"> Ansyen Kesyon &rarr;</a>
-      </div>
     </div>
   </div>
 </div>
-
+</div>
 <hr>
 
 {% endblock %}

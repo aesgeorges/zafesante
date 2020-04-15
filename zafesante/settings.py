@@ -83,7 +83,7 @@ WSGI_APPLICATION = 'zafesante.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
 
-DATABASES ={'default':dj_database_url.config(default='postgres://xymkgmknnlybqb:2929c246d0153db4ac45758774083ba99fda8f8d37b822ac9072043f8005884d@ec2-52-200-119-0.compute-1.amazonaws.com:5432/d89qve0s85b8m0')}
+DATABASES ={'default':dj_database_url.config(default='postgres://dxpicdsfqspuht:a0d288681cef9770ffe8e17786d3c77662a370aa91b0ed0433aecd972e618230@ec2-107-21-236-219.compute-1.amazonaws.com:5432/d5pj8a9f7dsnnc')}
 
 # Password validation
 # https://docs.djangoproject.com/en/2.0/ref/settings/#auth-password-validators
@@ -123,8 +123,8 @@ USE_TZ = True
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-STATIC_URL = '/static/'
+#STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+#STATIC_URL = '/static/'
 
 # Extra places for collectstatic to find static files.
 STATICFILES_DIRS = (

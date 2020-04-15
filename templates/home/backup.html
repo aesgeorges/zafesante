@@ -1,0 +1,123 @@
+{% extends "../base.html" %}
+{% load static %}
+{% block body %}
+<!-- Page Header -->
+<header class="masthead">
+      <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+      <ol class="carousel-indicators">
+      <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+      </ol>
+      <div class="carousel-inner" style="background-color: black;">
+      <div class="carousel-item active">
+        <img class="d-block w-100" src="{% static 'img/covid1.png' %}" alt="{{ title }}">
+        <div class="carousel-caption d-none d-md-block">
+            <h1>{{ title }}</h1>
+              <span class="subheading">{{ message }}</span>
+              </div>
+        </div>
+        <div class="carousel-item">
+        <img class="d-block w-100" src="{% static 'img/covid2.png' %}">
+        <div class="carousel-caption d-none d-md-block">
+            <h1>{{ title }}</h1>
+              <span class="subheading">{{ message }}</span>
+              </div>
+        </div>
+        <div class="carousel-item">
+        <img class="d-block w-100" src="{% static 'img/covid3.png' %}">
+        <div class="carousel-caption d-none d-md-block">
+            <h1>{{ title }}</h1>
+              <span class="subheading">{{ message }}</span>
+              </div>
+        </div>
+        <div class="carousel-item">
+        <img class="d-block w-100" src="{% static 'img/zafesante5.jpg' %}">
+        <div class="carousel-caption d-none d-md-block">
+            <h1>{{ title }}</h1>
+              <span class="subheading">{{ message }}</span>
+              </div>
+        </div>
+      </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- Portfolio Grid -->
+    <section class="bg-light" style="margin-top:-70px;" id="portfolio">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 text-center">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4 col-sm-6 portfolio-item">
+            <a class="portfolio-link" href="{% url 'blog' %}">
+              <div class="portfolio-hover">
+                <div class="portfolio-hover-content">
+                  <i class="fas fa-newspaper fa-3x"></i>
+                </div>
+              </div>
+              <img class="img-fluid" src="{% static 'img/chris.jpeg' %}" alt="">
+            </a>
+            <div class="portfolio-caption">
+              <h4>Atik</h4>
+              <p class="text-muted">Atik Zafè Sante yo.</p>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-6 portfolio-item">
+            <a class="portfolio-link" href="{% url 'questions' %}">
+              <div class="portfolio-hover">
+                <div class="portfolio-hover-content">
+                  <i class="fa fa-question-circle fa-3x"></i>
+                </div>
+              </div>
+              <img class="img-fluid" src="{% static 'img/isa.jpeg' %}" alt="">
+            </a>
+            <div class="portfolio-caption">
+              <h4>Kesyon</h4>
+              <p class="text-muted">Poze nou Kesyon w'</p>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-6 portfolio-item">
+            <a class="portfolio-link" href="{% url 'video_list' %}">
+              <div class="portfolio-hover">
+                <div class="portfolio-hover-content">
+                  <i class="fas fa-video fa-3x"></i>
+                </div>
+              </div>
+              <img class="img-fluid" src="{% static 'img/tournage.jpeg' %}" alt="">
+            </a>
+            <div class="portfolio-caption">
+              <h4>Videos</h4>
+              <p class="text-muted">Epizod Zafè Sante</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+        {% for card in cards %}
+        <div class="card text-white bg-dark text-center overflow-auto">
+          <div class="card-header">
+            {{ card.title }}
+          </div>
+          <div class="card-body">
+            <div class="card-columns">
+              {% for image in card.images.all %}
+              <div class="card">
+                <img class="card-img" src={{ image.image.url }} alt="InfoCard Image">
+              </div>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+        <br />
+        {% endfor %}
+
+
+    </section>
+
+{% endblock %}
