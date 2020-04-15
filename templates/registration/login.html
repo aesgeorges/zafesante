@@ -2,24 +2,22 @@
 {% load static %}
 {% block body %}
 <!-- Page Header -->
-  <header class="masthead" style="background-image: url('img/ZafeSanteBanner.png')">
+  <header class="jumbotron rounded">
   <div class="overlay"></div>
   <div class="container">
     <div class="row">
       <div class="col-lg-8 col-md-10 mx-auto">
-        <div class="post-heading">
-<h2>Login</h2>
-  <form method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit" class="btn btn-primary">Login</button>
-  </form>
-  <br />
-  <h4>Kreye yon nouvo kont.</h4>
-  <a class="btn btn-secondary" href="{% url 'signup' %}"> Register &rarr;</a>
-</div>
-</div>
-</div>
-</div>
+          <h2 class=mb-0>Login</h2>
+            <form method="post">
+              {% csrf_token %}
+              {{ form.as_p }}
+              <button type="submit" class="btn btn-primary">Login</button>
+            </form>
+            <br />
+            <h4>Kreye yon nouvo kont.</h4>
+            <a class="btn btn-secondary" href="{% url 'signup' %}"> Register &rarr;</a>
+        </div>
+      </div>
+    </div>
 </header>
 {% endblock %}
