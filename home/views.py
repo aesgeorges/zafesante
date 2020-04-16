@@ -12,8 +12,8 @@ register_template = 'registration/register.html'
 
 
 def index(request):
-    cards = Infocard.objects.order_by('created').order_by('created')
-    articles = Articles.objects.filter(published=True).order_by('featured', 'created')
+    cards = Infocard.objects.order_by('created').order_by('-created')
+    articles = Articles.objects.filter(published=True).order_by('-created')
     year = datetime.now().year
     for card in cards:
         print(card)
