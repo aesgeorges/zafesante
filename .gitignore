@@ -1,2 +1,4 @@
 venv/
+env/
 zafesante/local-settings.py
+*.pyc

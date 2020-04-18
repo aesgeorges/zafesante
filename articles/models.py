@@ -5,10 +5,16 @@ from django.urls import reverse
 
 class Articles(models.Model):
     title = models.CharField(max_length=100)
+    title_fr = models.CharField(max_length=100, blank=True)
+    title_en = models.CharField(max_length=100, blank=True)
     slug = models.SlugField(unique=True, max_length=255)
     author = models.CharField(max_length=50)
-    description = models.CharField(max_length=255)
+    description = models.CharField(max_length=255, blank=True)
+    description_en = models.CharField(max_length=255, blank=True)
+    description_fr = models.CharField(max_length=255, blank=True)
     content = models.TextField()
+    content_fr = models.TextField(blank=True)
+    content_en = models.TextField(blank=True)
     picture = models.ImageField('img', upload_to='pictures/', blank=True)
     featured = models.BooleanField(default=False)
     created = models.DateField(auto_now_add=True)

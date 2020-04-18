@@ -2,7 +2,24 @@
 {% load static %}
 {% block body %}
 {% load social_share %}
+
+<style>
+.nav-link{
+  color: #080705;
+}
+.nav-link.active {
+  background-color: #151b1a;
+  border-radius: 0px;
+}
+</style>
 <!-- Page Header -->
+<div class="nav nav-pills" id="pills-tab" role="tablist">
+  <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Kreyol</a>
+  <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Francais</a>
+  <a class="nav-link" id="pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="pills-messages" aria-selected="false">English</a>
+</div>
+<div class="tab-content" id="v-pills-tabContent">
+  <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
 {% if article.picture %}
 <header class="jumbotron p-3 p-md-5 text-white rounded box-main">
   {% else %}
@@ -14,7 +31,7 @@
       <div class="col-lg-8 col-md-10 mx-auto">
         <div class="post-heading">
           <h1>{{ title }}</h1><br />
-          <h4 class="subheading">{{ article.description }}</h4>
+          <h4 class="subheading">{{ description }}</h4>
           <span class="meta">Posted by
             <a href="#">{{ article.author }}</a>
           {{article.created}}
@@ -52,11 +69,129 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-8 col-md-10 mx-auto">
-        <p>{{ article.content|linebreaks }}</p>
+        <p>{{ text|linebreaks }}</p>
       </div>
     </div>
   </div>
 </article>
 
 <hr>
+</div>
+<div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+  {% if article.picture %}
+  <header class="jumbotron p-3 p-md-5 text-white rounded box-main">
+    {% else %}
+    <header class="jumbotron p-3 p-md-5 text-white rounded box-main" style="background-image: url('img/post-bg.jpg')">
+      {% endif %}
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="post-heading">
+            <h1>{{ article.title_fr }}</h1><br />
+            <h4 class="subheading">{{ article.description_fr }}</h4>
+            <span class="meta">Posted by
+              <a href="#">{{ article.author }}</a>
+            {{article.created}}
+          <br />
+          <br />
+
+          <ul class="list-inline text-center">
+            <p> Partagez sur les reseaux sociaux: </p>
+            <li class="list-inline-item">
+              <i class="fab fa-facebook"></i>
+          {% post_to_facebook "" "Share on Facebook" %}
+        </li>
+        <li class="list-inline-item">
+          <i class="fab fa-twitter"></i>
+          {% post_to_twitter "{{ article.title_fr }} - {{ article.description_fr }} - Atik Zafè Sante" "" "Tweetez!"%}
+            </li>
+          <li class="list-inline-item">
+            <i class="fab fa-linkedin"></i>
+          {% post_to_linkedin "{{ article.title_fr }} - {{ article.description_fr }} - Atik Zafè Sante http://www.zafesante.com/{{ article.get_absolute_url }}" "" "Post on LinkedIn"%}
+            </li>
+          <li class="list-inline-item">
+            <i class="fab fa-reddit"></i>
+          {% post_to_reddit "{{ article.title_fr }} - {{ article.description_fr }} - Atik Zafè Sante" "" %}
+            </li>
+          </ul>
+        </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Post Content -->
+  <article>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <p>{{ article.content_fr|linebreaks }}</p>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <hr>
+</div>
+<div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">
+  {% if article.picture %}
+  <header class="jumbotron p-3 p-md-5 text-white rounded box-main">
+    {% else %}
+    <header class="jumbotron p-3 p-md-5 text-white rounded box-main" style="background-image: url('img/post-bg.jpg')">
+      {% endif %}
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="post-heading">
+            <h1>{{ article.title_en  }}</h1><br />
+            <h4 class="subheading">{{ article.description_en }}</h4>
+            <span class="meta">Posted by
+              <a href="#">{{ article.author }}</a>
+            {{article.created}}
+          <br />
+          <br />
+
+          <ul class="list-inline text-center">
+            <p> Share This Article on Social Media: </p>
+            <li class="list-inline-item">
+              <i class="fab fa-facebook"></i>
+          {% post_to_facebook "" "Share on Facebook" %}
+        </li>
+        <li class="list-inline-item">
+          <i class="fab fa-twitter"></i>
+          {% post_to_twitter "{{ article.title_en  }} - {{ article.description_en }} - Atik Zafè Sante" "" "Tweet this!"%}
+            </li>
+          <li class="list-inline-item">
+            <i class="fab fa-linkedin"></i>
+          {% post_to_linkedin "{{ article.title_en  }} - {{ article.description_en }} - Atik Zafè Sante http://www.zafesante.com/{{ article.get_absolute_url }}" "" "Post on LinkedIn"%}
+            </li>
+          <li class="list-inline-item">
+            <i class="fab fa-reddit"></i>
+          {% post_to_reddit "{{ article.title_en }} - {{ article.description_en }} - Atik Zafè Sante" "" %}
+            </li>
+          </ul>
+        </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Post Content -->
+  <article>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <p>{{ article.content_en|linebreaks }}</p>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <hr>
+</div>
+</div>
 {% endblock %}

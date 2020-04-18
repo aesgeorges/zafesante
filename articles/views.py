@@ -18,5 +18,7 @@ def articles_blog(request):
 def single_article(request, slug):
     article = get_object_or_404(Articles, slug=slug)
     title = article.title
-    context = {'article': article, 'title': title}
+    text = article.content
+    description = article.description
+    context = {'article': article, 'title': title, 'text': text, 'description': description}
     return render(request, article_template, context)
