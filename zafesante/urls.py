@@ -22,4 +22,5 @@ urlpatterns = [
     path('articles/', include('articles.urls')),
     path('media/', include('media.urls')),
     path('questions/', include('questions.urls')),
+    path('ckeditor/', include('ckeditor_uploader.urls')),
 ]

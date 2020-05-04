@@ -69,7 +69,7 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-8 col-md-10 mx-auto">
-        <p>{{ text|linebreaks }}</p>
+        <p>{{ text|safe }}</p>
       </div>
     </div>
   </div>
@@ -127,7 +127,7 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
-          <p>{{ article.content_fr|linebreaks }}</p>
+          <p>{{ article.content_fr|safe }}</p>
         </div>
       </div>
     </div>
@@ -185,7 +185,7 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
-          <p>{{ article.content_en|linebreaks }}</p>
+          <p>{{ article.content_en|safe }}</p>
         </div>
       </div>
     </div>

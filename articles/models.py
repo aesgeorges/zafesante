@@ -1,5 +1,6 @@
 from django.db import models
 from django.urls import reverse
+from ckeditor_uploader.fields import RichTextUploadingField
 # Create your models here.
 
 
@@ -12,9 +13,9 @@ class Articles(models.Model):
     description = models.CharField(max_length=255, blank=True)
     description_en = models.CharField(max_length=255, blank=True)
     description_fr = models.CharField(max_length=255, blank=True)
-    content = models.TextField()
-    content_fr = models.TextField(blank=True)
-    content_en = models.TextField(blank=True)
+    content = RichTextUploadingField(blank=True)
+    content_fr = RichTextUploadingField(blank=True)
+    content_en = RichTextUploadingField(blank=True)
     picture = models.ImageField('img', upload_to='pictures/', blank=True)
     featured = models.BooleanField(default=False)
     created = models.DateField(auto_now_add=True)

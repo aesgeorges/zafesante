@@ -43,7 +43,12 @@ INSTALLED_APPS = [
     #3rd party
     'storages',
     'django_social_share',
+    'ckeditor',
+    'ckeditor_uploader'
 ]
+
+THUMBNAIL_BACKEND = "inline_media.sorl_backends.AutoFormatBackend"
+THUMBNAIL_FORMAT = "JPEG"
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -130,6 +135,8 @@ STATICFILES_DIRS = (
 
 #STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
+AWS_QUERYSTRING_AUTH = False
+
 AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
 AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
 AWS_STORAGE_BUCKET_NAME = 'zafesante-assets'
@@ -146,3 +153,5 @@ STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 STATIC_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN_STATIC, AWS_LOCATION)
 
 DEFAULT_FILE_STORAGE = 'zafesante.storage_backends.MediaStorage'
+
+CKEDITOR_UPLOAD_PATH = "uploads/"
