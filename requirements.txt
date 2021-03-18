@@ -11,7 +11,7 @@ docutils==0.15.2
 filelock==3.0.12
 jmespath==0.9.5
 pbr==5.4.4
-Pillow==7.0.0
+Pillow==8.1.1
 psycopg2==2.8.4
 python-dateutil==2.8.1
 pytz==2019.3
